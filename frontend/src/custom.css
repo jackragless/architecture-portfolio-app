@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+.navbar-brand {
+  font-family: "Playfair Display";
+  font-weight: 500;
+}
+
+html,
+body {
+  height: 100% !important;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif !important;
+  background-color: rgb(241, 241, 241) !important;
+}
+
+button {
+  border-radius: 40px !important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display";
+  font-weight: 400;
+}
+
+.profile img {
+  filter: grayscale(80%);
+}
+
+.SliderImg i {
+  z-index: 4;
+}
+
+.profile .desc {
+  color: var(--bs-navbar-color) !important;
+}
+
+.nav-item {
+  font-family: "Playfair Display";
+  font-weight: 400;
+}
+
+.navbar i {
+  font-size: 1.1rem;
+  color: var(--bs-nav-link-color);
+}
+
+.navbar i:hover {
+  transition: 0.3s ease-in-out;
+  color: #212529;
+}
+
+.profile i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #212529;
+}
+
+.profile i:hover {
+  transition: 0.3s ease-in-out;
+  color: #424649;
+}
+
+.ProjectItem .img-hidden {
+  margin-left: -100%;
+  z-index: -1;
+}
+
+.ProjectItem:hover .img-default {
+  visibility: hidden;
+}
+
+.ProjectItem .desc {
+  position: absolute;
+  z-index: -1;
+  color: white;
+  font-size: calc((1vw + 1vh + 0.5vmin) / 2);
+}
+
+.ProjectItem:hover .img-hidden {
+  filter: blur(3px) brightness(0.5);
+  /* transform: scale(1.01); */
+  transition: 0.3s ease-in-out;
+}
+
+.slick-slide div {
+  outline: none;
+}
+
+.SliderImg img {
+  height: 700px;
+}
+
+.imgWrapper {
+  max-height: 50em;
+  max-width: 50em;
+}
+
+.slick-arrow:hover,
+.SliderImg i:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 0.7 !important;
+}
