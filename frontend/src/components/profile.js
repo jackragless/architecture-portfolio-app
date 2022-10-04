@@ -11,22 +11,26 @@ const Profile = () => {
 
   if (profile) {
     return (
-      <div className="h-100 d-flex justify-content-center align-items-center my-4 profile">
+      // className="h-auto d-flex justify-content-center align-items-center my-4
+      <div
+        className="profile d-flex align-items-center justify-content-center"
+        style={{ height: "80vh" }}
+      >
         <div className="container">
           <div className="row">
-            <div className="col-sm my-2">
+            <div className="col-lg mx-3">
               <img
                 className="img-fluid"
                 src={profile.headshot}
                 alt="img-missing"
               />
             </div>
-            <div className="col d-flex align-items-center position-static my-2 desc">
+            <div className="col d-flex align-items-center mx-3 desc">
               <div>
                 <p>
                   <b>{profile.desc}</b>
                 </p>
-                <div className="d-flex justify-content-center align-items-center">
+                <div className="d-flex align-items-center">
                   <a className="mx-2" href={profile.resume} download>
                     <button type="button" class="btn btn-primary btn-dark">
                       Resume
@@ -43,9 +47,9 @@ const Profile = () => {
                   <a href={profile.linkedin} target="_blank">
                     <i class="bi bi-linkedin mx-2"></i>
                   </a>
-                  <p className="m-0" style={{ fontWeight: "bold" }}>
-                    carmengrdosic@gmail.com
-                  </p>
+                  {/* <p className="m-0" style={{ fontWeight: "bold" }}>
+                    {profile.email}
+                  </p> */}
                 </div>
               </div>
             </div>

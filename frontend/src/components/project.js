@@ -56,6 +56,9 @@ const SampleNextArrow = (props) => {
 
 const Project = () => {
   const settings = {
+    draggable: false,
+    // lazyLoad: "progressive",
+    // slidesToShow: 3,
     variableWidth: true,
     arrows: true,
     nextArrow: <SampleNextArrow />,
@@ -82,16 +85,16 @@ const Project = () => {
   if (data) {
     return (
       <div>
-        <Slider {...settings} className="ps-md-4 d-none d-md-block">
+        <Slider {...settings} className="mx-3 my-5 d-none d-md-block">
           {data.main_images.map((view) => {
             return (
-              <div>
+              <div className="slickSlide">
                 <div className="d-flex justify-content-end mx-1 SliderImg">
                   <i
-                    className=" position-absolute  bi bi-plus-square-fill p-2 "
+                    className=" position-absolute bi bi-plus-square-fill p-2 "
                     onClick={() => {
                       setToggler(!toggler)
-                      setCurimage(view.img)
+                      setCurimage("/" + view.high_res_img)
                     }}
                     style={{
                       cursor: "pointer",
@@ -100,11 +103,10 @@ const Project = () => {
                       fontSize: "1.3rem",
                     }}
                   ></i>
-                  <img src={view.img} alt="img-missing" />
+                  <img src={"/" + view.low_res_img} alt="img-missing" />
                 </div>
                 <div
-                  style={{ zIndex: 100 }}
-                  className="container my-2 p-0"
+                  className="p-1 slide-desc"
                   dangerouslySetInnerHTML={{ __html: view.html_desc }}
                 ></div>
               </div>
@@ -116,9 +118,13 @@ const Project = () => {
             return (
               <div className="row">
                 <div className="col">
-                  <img className="img-fluid" src={view.img} alt="img-missing" />
+                  <img
+                    className="img-fluid"
+                    src={"/" + view.low_res_img}
+                    alt="img-missing"
+                  />
                   <div
-                    className="container-fluid my-2 p-0"
+                    className="container-fluid my-2 p-0 slide-desc"
                     dangerouslySetInnerHTML={{ __html: view.html_desc }}
                   ></div>
                 </div>

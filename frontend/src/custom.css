@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@400;500&display=swap");
 .navbar-brand {
   font-family: "Playfair Display";
   font-weight: 500;
@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif !important;
+  font-family: "Montserrat", Arial, sans-serif !important;
   background-color: rgb(241, 241, 241) !important;
 }
 
@@ -63,43 +63,90 @@ h3 {
   color: #424649;
 }
 
-.ProjectItem .img-hidden {
+/* .ProjectItem .img-hidden {
   margin-left: -100%;
   z-index: -1;
 }
 
 .ProjectItem:hover .img-default {
   visibility: hidden;
+} */
+
+/* .ProjectItem .desc {
+  z-index: -2;
+  color: black;
+} */
+
+/* .ProjectItem:hover .desc { */
+/* color: white; */
+/* z-index: 1; */
+/* font-size: calc((1vw + 1vh + 0.5vmin) / 2); */
+/* } */
+
+/* .ProjectItem .desc {
+
+  transform: translate(-130%, 0%);
+} */
+
+/* .ProjectItem .desc {
+  color: transparent;
+  position: absolute;
+} */
+
+.ProjectItem {
+  position: relative;
+  text-align: center;
 }
 
 .ProjectItem .desc {
+  pointer-events: none;
+  color: transparent;
   position: absolute;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ProjectItem:hover .desc {
   color: white;
-  font-size: calc((1vw + 1vh + 0.5vmin) / 2);
 }
-
-.ProjectItem:hover .img-hidden {
-  filter: blur(3px) brightness(0.5);
-  /* transform: scale(1.01); */
-  transition: 0.3s ease-in-out;
+.ProjectItem:hover img {
+  filter: blur(3px) brightness(0.4);
+  transition: 0.5s ease-in-out;
 }
-
+/* 
 .slick-slide div {
   outline: none;
-}
+} */
 
 .SliderImg img {
-  height: 700px;
+  height: 600px;
 }
 
-.imgWrapper {
+/* .imgWrapper {
   max-height: 50em;
   max-width: 50em;
+} */
+.slickSlide {
+  display: table-caption !important;
 }
+
+.slick-slider {
+  position: initial !important;
+}
+
+/* p {
+  display: inline-block !important;
+} */
 
 .slick-arrow:hover,
 .SliderImg i:hover {
   transition: 0.3s ease-in-out;
   opacity: 0.7 !important;
+}
+
+@media (min-width: 768px) {
+  .bi-instagram {
+    margin: 0;
+  }
 }

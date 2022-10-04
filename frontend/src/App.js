@@ -15,8 +15,9 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ delay: 0.3 }}
       >
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-sm mx-2 my-2">
           <div class="container-fluid">
             <a class="navbar-brand" href="/">
               CARMEN GRDOSIC
@@ -50,13 +51,13 @@ function App() {
                   href="https://www.instagram.com/creations_by_carmengrdosic/"
                   target="_blank"
                 >
-                  <i class="bi bi-instagram p-2"></i>
+                  <i class="bi bi-instagram mx-3"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/carmen-grdosic-8961641bb/"
                   target="_blank"
                 >
-                  <i class="bi bi-linkedin p-2"></i>
+                  <i class="bi bi-linkedin"></i>
                 </a>
               </ul>
             </div>

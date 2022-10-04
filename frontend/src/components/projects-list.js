@@ -1,5 +1,6 @@
 import React from "react"
 import Fetch from "./fetch.js"
+import HoverImage from "react-hover-image"
 
 const ProjectsList = (props) => {
   const [data, setData] = React.useState(null)
@@ -26,29 +27,28 @@ const ProjectsList = (props) => {
       <div className="container ProjectGrid">
         {project_pairs.map((pair) => {
           return (
-            <div className="row mh-50 my-2 d-flex justify-content-center ">
+            <div className="row mh-50 my-1 d-flex justify-content-center ">
               {pair.map((project) => {
-                return (
-                  <a
-                    href={`projects/${project.title}`}
-                    className="col-sm-5 mb-2 d-flex align-items-center justify-content-center ProjectItem"
-                  >
-                    <img
-                      className="img-fluid img-default"
-                      src={project.display_images[0]}
-                      alt="img-missing"
-                    />
-                    <img
-                      className="img-fluid img-hidden"
-                      src={project.display_images[1]}
-                      alt="img-missing"
-                    />
-                    <div className="desc">
-                      <h1>{project.title}</h1>
-                      <p>{project.display_desc}</p>
-                    </div>
-                  </a>
-                )
+                if (project) {
+                  return (
+                    <a
+                      href={`projects/${project.title}`}
+                      className="col-sm-5 my-1 mx-1 px-0 d-flex align-items-center justify-content-center ProjectItem"
+                    >
+                      <HoverImage
+                        className="img-fluid img"
+                        src={project.display[0]}
+                        hoverSrc={project.display[1]}
+                      />
+
+                      <div className="desc">
+                        <h1>{project.title.replace(/_/g, " ")}</h1>
+                      </div>
+                    </a>
+                  )
+                } else {
+                  return <div className="col-sm-5 my-1 mx-1 px-0 "></div>
+                }
               })}
             </div>
           )
