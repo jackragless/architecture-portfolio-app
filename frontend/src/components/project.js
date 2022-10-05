@@ -107,7 +107,7 @@ const Project = () => {
                       <img src={"/" + view.low_res_img} alt="img-missing" />
                     </div>
                     <div
-                      className="p-1 slide-desc"
+                      className="p-1 mt-4 slide-desc"
                       dangerouslySetInnerHTML={{ __html: view.html_desc }}
                     ></div>
                   </div>
