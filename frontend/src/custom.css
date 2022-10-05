@@ -6,12 +6,14 @@
 
 html,
 body {
-  height: 100% !important;
-}
-
-body {
   font-family: "Montserrat", Arial, sans-serif !important;
   background-color: rgb(241, 241, 241) !important;
+}
+
+html,
+body,
+body > #root {
+  height: 100vh;
 }
 
 button {
@@ -63,35 +65,9 @@ h3 {
   color: #424649;
 }
 
-/* .ProjectItem .img-hidden {
-  margin-left: -100%;
-  z-index: -1;
+.ProjectGrid {
+  max-width: 1600px !important;
 }
-
-.ProjectItem:hover .img-default {
-  visibility: hidden;
-} */
-
-/* .ProjectItem .desc {
-  z-index: -2;
-  color: black;
-} */
-
-/* .ProjectItem:hover .desc { */
-/* color: white; */
-/* z-index: 1; */
-/* font-size: calc((1vw + 1vh + 0.5vmin) / 2); */
-/* } */
-
-/* .ProjectItem .desc {
-
-  transform: translate(-130%, 0%);
-} */
-
-/* .ProjectItem .desc {
-  color: transparent;
-  position: absolute;
-} */
 
 .ProjectItem {
   position: relative;
@@ -112,32 +88,12 @@ h3 {
 }
 .ProjectItem:hover img {
   filter: blur(3px) brightness(0.4);
+
   transition: 0.5s ease-in-out;
 }
-/* 
-.slick-slide div {
-  outline: none;
-} */
-
-.SliderImg img {
-  height: 600px;
+.ProjectItem:hover {
+  overflow: hidden;
 }
-
-/* .imgWrapper {
-  max-height: 50em;
-  max-width: 50em;
-} */
-.slickSlide {
-  display: table-caption !important;
-}
-
-.slick-slider {
-  position: initial !important;
-}
-
-/* p {
-  display: inline-block !important;
-} */
 
 .slick-arrow:hover,
 .SliderImg i:hover {
@@ -145,8 +101,34 @@ h3 {
   opacity: 0.7 !important;
 }
 
-@media (min-width: 768px) {
-  .bi-instagram {
-    margin: 0;
-  }
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .custRow.header {
+  flex: 0 1 auto;
+}
+
+.box .custRow.content {
+  flex: 1 1 auto;
+}
+
+.slickCard img {
+  height: 60vh;
+}
+
+.slickCard {
+  display: table-caption !important;
+}
+
+.slick-next,
+.slick-prev {
+  transform: translate(0, 30vh) !important;
+  top: 0% !important;
+}
+
+.profile {
+  max-width: 1600px !important;
 }

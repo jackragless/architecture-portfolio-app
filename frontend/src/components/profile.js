@@ -12,25 +12,22 @@ const Profile = () => {
   if (profile) {
     return (
       // className="h-auto d-flex justify-content-center align-items-center my-4
-      <div
-        className="profile d-flex align-items-center justify-content-center"
-        style={{ height: "80vh" }}
-      >
-        <div className="container">
+      <div className="custRow content d-flex align-items-center justify-content-center">
+        <div className="container profile">
           <div className="row">
-            <div className="col-lg mx-3">
+            <div className="col-md my-2">
               <img
                 className="img-fluid"
                 src={profile.headshot}
                 alt="img-missing"
               />
             </div>
-            <div className="col d-flex align-items-center mx-3 desc">
+            <div className="col d-flex align-items-center justify-content-center desc p-auto">
               <div>
                 <p>
                   <b>{profile.desc}</b>
                 </p>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center justify-content-center">
                   <a className="mx-2" href={profile.resume} download>
                     <button type="button" class="btn btn-primary btn-dark">
                       Resume
@@ -47,9 +44,12 @@ const Profile = () => {
                   <a href={profile.linkedin} target="_blank">
                     <i class="bi bi-linkedin mx-2"></i>
                   </a>
-                  {/* <p className="m-0" style={{ fontWeight: "bold" }}>
-                    {profile.email}
-                  </p> */}
+                  <a
+                    href={`mailto:{profile.email}?subject = Feedback&body = Message`}
+                    target="_blank"
+                  >
+                    <i class="bi bi-envelope-fill mx-2"></i>
+                  </a>
                 </div>
               </div>
             </div>

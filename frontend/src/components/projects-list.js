@@ -27,13 +27,13 @@ const ProjectsList = (props) => {
       <div className="container ProjectGrid">
         {project_pairs.map((pair) => {
           return (
-            <div className="row mh-50 my-1 d-flex justify-content-center ">
+            <div className="row d-flex justify-content-center ">
               {pair.map((project) => {
                 if (project) {
                   return (
                     <a
                       href={`projects/${project.title}`}
-                      className="col-sm-5 my-1 mx-1 px-0 d-flex align-items-center justify-content-center ProjectItem"
+                      className="col-md-5 my-1 mx-1 px-0 d-flex align-items-center justify-content-center ProjectItem"
                     >
                       <HoverImage
                         className="img-fluid img"
@@ -42,7 +42,17 @@ const ProjectsList = (props) => {
                       />
 
                       <div className="desc">
-                        <h1>{project.title.replace(/_/g, " ")}</h1>
+                        <h1>
+                          {project.title
+                            .substring(0, project.title.indexOf("_"))
+                            .toUpperCase()}
+                        </h1>
+                        <p>
+                          {" "}
+                          {project.title
+                            .substring(project.title.indexOf("_") + 1)
+                            .replace(/_/g, " ")}
+                        </p>
                       </div>
                     </a>
                   )

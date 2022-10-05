@@ -14,13 +14,13 @@ const SamplePrevArrow = (props) => {
       className={`bi bi-arrow-left-square-fill ${className}`}
       onClick={onClick}
       style={{
-        left: "40px",
+        left: "20px",
         zIndex: 3,
         color: "black",
         opacity: 0.5,
         display: "block",
-        height: "50px",
-        width: "50px",
+        height: "max(4vh,40px)",
+        width: "max(4vw,40px)",
         // top: "50px",
       }}
       viewBox="0 0 16 16"
@@ -39,13 +39,13 @@ const SampleNextArrow = (props) => {
       className={`bi bi-arrow-right-square-fill ${className}`}
       onClick={onClick}
       style={{
-        right: "40px",
+        right: "20px",
         zIndex: 3,
         color: "black",
         opacity: 0.5,
         display: "block",
-        height: "50px",
-        width: "50px",
+        height: "max(4vh,40px)",
+        width: "max(4vw,40px)",
       }}
       viewBox="0 0 16 16"
     >
@@ -56,11 +56,10 @@ const SampleNextArrow = (props) => {
 
 const Project = () => {
   const settings = {
-    draggable: false,
+    draggable: true,
     // lazyLoad: "progressive",
     // slidesToShow: 3,
     variableWidth: true,
-    arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     touchMove: true,
@@ -84,47 +83,51 @@ const Project = () => {
 
   if (data) {
     return (
-      <div>
-        <Slider {...settings} className="mx-3 my-5 d-none d-md-block">
-          {data.main_images.map((view) => {
-            return (
-              <div className="slickSlide">
-                <div className="d-flex justify-content-end mx-1 SliderImg">
-                  <i
-                    className=" position-absolute bi bi-plus-square-fill p-2 "
-                    onClick={() => {
-                      setToggler(!toggler)
-                      setCurimage("/" + view.high_res_img)
-                    }}
-                    style={{
-                      cursor: "pointer",
-                      color: "black",
-                      opacity: 0.5,
-                      fontSize: "1.3rem",
-                    }}
-                  ></i>
-                  <img src={"/" + view.low_res_img} alt="img-missing" />
-                </div>
-                <div
-                  className="p-1 slide-desc"
-                  dangerouslySetInnerHTML={{ __html: view.html_desc }}
-                ></div>
-              </div>
-            )
-          })}
-        </Slider>
+      <div style={{ display: "contents" }}>
+        <div className="custRow content d-flex align-items-center d-none d-md-flex">
+          <div className="mw-100">
+            <Slider {...settings}>
+              {data.main_images.map((view) => {
+                return (
+                  <div className="slickCard container-fluid">
+                    <div className="d-flex justify-content-end SliderImg">
+                      <i
+                        className=" position-absolute bi bi-plus-square-fill p-2 "
+                        onClick={() => {
+                          setToggler(!toggler)
+                          setCurimage("/" + view.high_res_img)
+                        }}
+                        style={{
+                          cursor: "pointer",
+                          color: "black",
+                          opacity: 0.5,
+                          fontSize: "2vh",
+                        }}
+                      ></i>
+                      <img src={"/" + view.low_res_img} alt="img-missing" />
+                    </div>
+                    <div
+                      className="p-1 slide-desc"
+                      dangerouslySetInnerHTML={{ __html: view.html_desc }}
+                    ></div>
+                  </div>
+                )
+              })}
+            </Slider>
+          </div>
+        </div>
         <div className="container d-md-none">
           {data.main_images.map((view) => {
             return (
               <div className="row">
-                <div className="col">
+                <div className="col p-0">
                   <img
                     className="img-fluid"
                     src={"/" + view.low_res_img}
                     alt="img-missing"
                   />
                   <div
-                    className="container-fluid my-2 p-0 slide-desc"
+                    className="container-fluid m-2 slide-desc"
                     dangerouslySetInnerHTML={{ __html: view.html_desc }}
                   ></div>
                 </div>

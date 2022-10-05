@@ -1,4 +1,3 @@
-// import "./App.css"
 import "./custom.css"
 import React from "react"
 import { motion } from "framer-motion"
@@ -10,14 +9,15 @@ import Project from "./components/project"
 function App() {
   const location = useLocation()
   return (
-    <div className="App">
+    <div className="App box">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ delay: 0.3 }}
+        className="box"
       >
-        <nav class="navbar navbar-expand-sm mx-2 my-2">
+        <nav class="navbar navbar-expand-sm mx-2 my-2 custRow header">
           <div class="container-fluid">
             <a class="navbar-brand" href="/">
               CARMEN GRDOSIC
@@ -51,7 +51,7 @@ function App() {
                   href="https://www.instagram.com/creations_by_carmengrdosic/"
                   target="_blank"
                 >
-                  <i class="bi bi-instagram mx-3"></i>
+                  <i class="bi bi-instagram me-3"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/carmen-grdosic-8961641bb/"
