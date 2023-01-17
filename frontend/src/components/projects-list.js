@@ -2,7 +2,7 @@ import React from "react"
 import Fetch from "./fetch.js"
 import HoverImage from "react-hover-image"
 
-const ProjectsList = (props) => {
+const ProjectsList = () => {
   const [data, setData] = React.useState(null)
 
   React.useEffect(() => {

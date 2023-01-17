@@ -11,7 +11,6 @@ const Profile = () => {
 
   if (profile) {
     return (
-      // className="h-auto d-flex justify-content-center align-items-center my-4
       <div className="custRow content d-flex align-items-center justify-content-center">
         <div className="container profile">
           <div className="row">
@@ -29,26 +28,26 @@ const Profile = () => {
                 </p>
                 <div className="d-flex align-items-center justify-content-center">
                   <a className="mx-2" href={profile.resume} download>
-                    <button type="button" class="btn btn-primary btn-dark">
+                    <button type="button" className="btn btn-primary btn-dark">
                       Resume
                     </button>
                   </a>
                   <a className="mx-2" href={profile.portfolio} download>
-                    <button type="button" class="btn btn-primary btn-dark">
+                    <button type="button" className="btn btn-primary btn-dark">
                       Portfolio
                     </button>
                   </a>
                   <a href={profile.instagram} target="_blank">
-                    <i class="bi bi-instagram mx-2"></i>
+                    <i className="bi bi-instagram mx-2"></i>
                   </a>
                   <a href={profile.linkedin} target="_blank">
-                    <i class="bi bi-linkedin mx-2"></i>
+                    <i className="bi bi-linkedin mx-2"></i>
                   </a>
                   <a
                     href={`mailto:{profile.email}?subject = Feedback&body = Message`}
                     target="_blank"
                   >
-                    <i class="bi bi-envelope-fill mx-2"></i>
+                    <i className="bi bi-envelope-fill mx-2"></i>
                   </a>
                 </div>
               </div>

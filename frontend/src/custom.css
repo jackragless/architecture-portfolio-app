@@ -8,6 +8,7 @@ html,
 body {
   font-family: "Montserrat", Arial, sans-serif !important;
   background-color: rgb(241, 241, 241) !important;
+  font-size: min(18px, 1.4vh);
 }
 
 html,
@@ -37,6 +38,10 @@ h3 {
 
 .profile .desc {
   color: var(--bs-navbar-color) !important;
+}
+
+.profile {
+  display: table-caption !important;
 }
 
 .nav-item {
@@ -129,6 +134,13 @@ h3 {
   top: 0% !important;
 }
 
-.profile {
-  max-width: 1600px !important;
+.slick-slider {
+  overflow-y: hidden;
+}
+
+.slider {
+  display: none;
+}
+.slider.slick-initialized {
+  display: block;
 }

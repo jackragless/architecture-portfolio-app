@@ -17,13 +17,13 @@ function App() {
         transition={{ delay: 0.3 }}
         className="box"
       >
-        <nav class="navbar navbar-expand-sm mx-2 my-2 custRow header">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">
+        <nav className="navbar navbar-expand-sm mx-2 my-2 custRow header">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
               CARMEN GRDOSIC
             </a>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -31,33 +31,36 @@ function App() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="/profile">
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link" href="/profile">
                     Profile
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="/projects">
+                <li className="nav-item">
+                  <a className="nav-link" aria-current="page" href="/projects">
                     Projects
                   </a>
                 </li>
               </ul>
-              <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+              <ul className="navbar-nav flex-row flex-wrap ms-md-auto">
                 <a
                   href="https://www.instagram.com/creations_by_carmengrdosic/"
                   target="_blank"
                 >
-                  <i class="bi bi-instagram me-3"></i>
+                  <i className="bi bi-instagram me-3"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/carmen-grdosic-8961641bb/"
                   target="_blank"
                 >
-                  <i class="bi bi-linkedin"></i>
+                  <i className="bi bi-linkedin"></i>
                 </a>
               </ul>
             </div>
